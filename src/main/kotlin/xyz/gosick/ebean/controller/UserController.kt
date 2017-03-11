@@ -13,10 +13,7 @@ import xyz.gosick.ebean.service.UserService
  */
 @RestController
 @RequestMapping("/user")
-class UserController {
-
-    @Autowired
-    lateinit var userService: UserService
+class UserController(val userService: UserService) {
 
     @GetMapping("/list")
     fun getUser(): List<User> {
